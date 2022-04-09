@@ -1,0 +1,67 @@
+body {
+  margin: 50px;
+  background-color: azure;
+
+}
+
+
+
+
+.titleHeader {
+  text-align: center;
+  font-size: 40px;
+  /* margin: 50px 60px; */
+  border: 30px;
+  padding: 40px;
+  border-block-style: 5px;
+  background-color: dimgrey;
+  text-shadow: black 2px 2px;
+}
+
+.titleText {
+  text-align: center;
+  color: azure;
+}
+
+.inputSteez{
+  border-style: inset;
+
+  box-shadow: 2px 5px #888888;
+  text-align: center;
+
+}
+
+.buttonSteez {
+  border-style: inset;
+
+  box-shadow: 2px 5px #888888;
+  text-align: right;
+
+}
+
+/* .pSteez {
+  font-size: xx-large;
+  text-align: center;
+} */
+
+td, th{
+  border: 2px solid black;
+  /* position: sticky; */
+  width: 20%;
+}
+
+.tableSteez {
+  border: 2px solid black;
+  
+
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd
+}
+
+/* .headSteez {
+  border: 2px solid black;
+  width: auto;
+} */
+
