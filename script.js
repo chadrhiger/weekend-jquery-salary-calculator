@@ -69,12 +69,9 @@ for (let employee of employees){
       <button class="">(delete button)</button>
     </tr> 
 `);
+      employees = [];
   }
 }
-
-
-
-
 
 
 
