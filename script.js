@@ -30,6 +30,8 @@ console.log('jq ready');
 function readyNow(){
   console.log('jq onReady');
   $('#submitButton').on('click', onSubmit);
+  $('#submitButton').on('click', appendEmployee);
+
 
   // $('#submitButton').on('click', addEmployee);
 } 
@@ -48,16 +50,23 @@ function onSubmit() {
   }
   employees.push(employeeOject);
   console.log('Added employee is:', employees);
-  
-}
+  }
 
-// append employeeObject to DOM
-// 
+  // append employeeObject to DOM
+// Get object values from array and append them to the DOM using 
 
 function appendEmployee() {
-  for 
-    let putEmployeeOnDOM = $('.employeeInputs').append(employeeOject);
-  }
+  $('#employeeList').append(`
+    <tr>
+      <td>$('#firstName')</td>
+      <td>$('#lastName')</td>
+      <td>$('#employeeID')</td>
+      <td>$('#title')</td>
+      <td>$('#annualSalary')</td>
+      <button class="">(delete button)</button>
+    </tr> 
+`);
+}
 
 
 
