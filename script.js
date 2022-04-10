@@ -15,11 +15,16 @@
   // XX make click respond to inputs
   // XX log inputs on console
   // XX get values from inputs and store information in object (in array)
-  // append values into DOM table
+  // XX append values into DOM table
+  // XX append employeeObject to DOM
+  // XX Get object values from array and append them to the DOM using 
+  // XX target inputs and clear field
+  // 
   // compare total salary values to salary limit
-
-
-
+  // create "total monthly costs" field below table
+  // add total year salaries entered and... 
+  // divide by 12.
+  // if resultant number exceeds $20,000, add red background color to total monthly cost
 
 
 console.log('JS sauce');
@@ -31,14 +36,9 @@ function readyNow(){
   console.log('jq onReady');
   $('#submitButton').on('click', onSubmit);
   $('#submitButton').on('click', appendEmployee);
-
-
-  // $('#submitButton').on('click', addEmployee);
 } 
 
 let employees = [];
-
-// XX get values of inputs and store push them into the array
 
 function onSubmit() { 
   let employeeOject = {
@@ -50,28 +50,35 @@ function onSubmit() {
   }
   employees.push(employeeOject);
   console.log('Added employee is:', employees);
-  }
-
-  // append employeeObject to DOM
-// Get object values from array and append them to the DOM using 
+  $('#firstName').val(''), 
+  $('#lastName').val(''),
+  $('#employeeID').val(''),
+  $('#title').val(''),
+  $('#annualSalary').val('')
+}
+  
 
 function appendEmployee() {
-for (let employee of employees){
-
-
-  $('#employeeList').append(`
-    <tr>
-      <td>${employee.firstName}</td>
-      <td>${employee.lastName}</td>
-      <td>${employee.employeeID}</td>
-      <td>${employee.title}</td>
-      <td>${employee.annualSalary}</td>
-      <button class="">(delete button)</button>
-    </tr> 
-`);
+  console.log('in appendEmployee');
+  
+  for (let employee of employees){
+    $('#employeeList').append(`
+      <tr>
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td>${employee.employeeID}</td>
+        <td>${employee.title}</td>
+        <td>${employee.annualSalary}</td>
+        <button class="">(delete button)</button>
+      </tr> 
+  `);
       employees = [];
-  }
+    }
 }
+
+
+
+
 
 
 
