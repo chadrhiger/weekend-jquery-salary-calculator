@@ -22,7 +22,7 @@
   // 
   // compare total salary values to salary limit
   // create "total monthly costs" field below table
-  // add total year salaries entered and... 
+  // add total year salaries inputs stored in "employees" object and... 
   // divide by 12.
   // if resultant number exceeds $20,000, add red background color to total monthly cost
 
@@ -35,10 +35,11 @@ console.log('jq ready');
 function readyNow(){
   console.log('jq onReady');
   $('#submitButton').on('click', onSubmit);
-  $('#submitButton').on('click', appendEmployee);
+  // $('#submitButton').on('click', appendEmployee);
 } 
 
 let employees = [];
+// let monthlyCost = [];
 
 function onSubmit() { 
   let employeeOject = {
@@ -49,130 +50,41 @@ function onSubmit() {
   annualSalary: $('#annualSalary').val(),
   }
   employees.push(employeeOject);
+  // monthlyCost.push(employeeOject);
   console.log('Added employee is:', employees);
   $('#firstName').val(''), 
   $('#lastName').val(''),
   $('#employeeID').val(''),
   $('#title').val(''),
   $('#annualSalary').val('')
+  appendEmployee(employeeOject);
+  // calcMonthlyCost()
 }
   
 
-function appendEmployee() {
+function appendEmployee(newEmployee) {
   console.log('in appendEmployee');
   
-  for (let employee of employees){
+  // for (let employee of employees){
     $('#employeeList').append(`
       <tr>
-        <td>${employee.firstName}</td>
-        <td>${employee.lastName}</td>
-        <td>${employee.employeeID}</td>
-        <td>${employee.title}</td>
-        <td>${employee.annualSalary}</td>
+        <td>${newEmployee.firstName}</td>
+        <td>${newEmployee.lastName}</td>
+        <td>${newEmployee.employeeID}</td>
+        <td>${newEmployee.title}</td>
+        <td>${newEmployee.annualSalary}</td>
         <button class="">(delete button)</button>
       </tr> 
   `);
-      employees = [];
-    }
+      
+  // }
+  // employees = [];
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const example = {
-//   first: 'Chad', 
-//   last: 'Rhiger', 
-//   id: '42', 
-//   title: 'Worker Guy', 
-//   salary: '$420000' 
+// function calcMonthlyCost() {
+//   console.log('in calcMonthlyCost, total salary cost is:', monthlyCost);
+//   monthlyCost.push();
+  // if (monthlyCost > $20,000){
+    
+  // }
 // }
-
-
-
-
-
-
-// function appendDOM(){
-//   $('.employeeInputs').append(`
-//   <span id="inputContainer">
-//     <input class="inputSteez" id="firstName" placeholder="First Name"></input>
-//     <input class="inputSteez" id="lastName" placeholder="Last Name"></input>
-//     <input class="inputSteez" id="employeeID" placeholder="Employee ID"></input>
-//     <input class="inputSteez" id="title" placeholder="Title"></input>
-//     <input class="inputSteez" id="annualSalary" placeholder="Annual Salary"></input>
-//     <button class="buttonSteez" id="submitButton" >Submit</button>
-
-//   </span>
-
-
-//   <table>
-//     <thead>
-//       <tr>
-//         <th>First Name</th>
-//         <th>Last Name</th>
-//         <th>Employee ID</th>
-//         <th>Title</th>
-//         <th>Annual Salary</th>
-
-//       </tr>
-//     </thead>
-//   `)
-// }
-
-// function addEmployee() {
-//   console.log('addEmployee. is thing thing on?');
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // let input = document.createElement('input');   ????
