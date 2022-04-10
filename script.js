@@ -56,16 +56,20 @@ function onSubmit() {
 // Get object values from array and append them to the DOM using 
 
 function appendEmployee() {
+for (let employee of employees){
+
+
   $('#employeeList').append(`
     <tr>
-      <td>$('#firstName')</td>
-      <td>$('#lastName')</td>
-      <td>$('#employeeID')</td>
-      <td>$('#title')</td>
-      <td>$('#annualSalary')</td>
+      <td>${employee.firstName}</td>
+      <td>${employee.lastName}</td>
+      <td>${employee.employeeID}</td>
+      <td>${employee.title}</td>
+      <td>${employee.annualSalary}</td>
       <button class="">(delete button)</button>
     </tr> 
 `);
+  }
 }
 
 
