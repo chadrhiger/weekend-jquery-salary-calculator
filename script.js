@@ -38,6 +38,7 @@ function readyNow(){
   // $('#submitButton').on('click', appendEmployee);
 } 
 
+let monthlyCost = 0;
 let employees = [];
 // let monthlyCost = [];
 
@@ -59,13 +60,23 @@ function onSubmit() {
   $('#annualSalary').val('')
   appendEmployee(employeeOject);
   // calcMonthlyCost()
-}
+  monthlyCost += (Number(employeeOject.annualSalary)/12);
+  $('#monthlyCost').text(monthlyCost.toFixed(2));
+  
+  function tooMuch() {
+    console.log('monthlyCost');
+    if (monthlyCost >= 20000){
+    document.getElementById("monthlyCost").style.backgroundColor = "red";
+  }
+  }
+  tooMuch()
+  // some of this code was lovingly "assisted" to me by the handsome mr joe :)
+} // end onSubmit
   
 
 function appendEmployee(newEmployee) {
   console.log('in appendEmployee');
   
-  // for (let employee of employees){
     $('#employeeList').append(`
       <tr>
         <td>${newEmployee.firstName}</td>
@@ -81,10 +92,40 @@ function appendEmployee(newEmployee) {
   // employees = [];
 }
 
+
+function deletButton() {
+  for (employee of employees){
+
+  }
+
+
+  $(this).closest("tr").remove();
+}
+
+
+
+
+
+
+// create function with gets value of each annualSalary input, converts that value to a number, 
+// adds it to the previous total, and then divides by 12 (months)
+// append that to MONTHLY COSTS output in the footer
+
 // function calcMonthlyCost() {
+//   console.log('in calcMonthlyCost', );
+  // for (let employee of employees){ 
+    // monthlyCost += Number(employee.annualSalary);
+    // $('#monthlyCost').text(monthlyCost);
+
+  // }
+  // console.log('queries, gents!:', totalCost);
+// }
+
+
+
+
 //   console.log('in calcMonthlyCost, total salary cost is:', monthlyCost);
 //   monthlyCost.push();
   // if (monthlyCost > $20,000){
     
   // }
-// }
