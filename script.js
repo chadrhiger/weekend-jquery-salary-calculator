@@ -35,6 +35,8 @@ console.log('jq ready');
 function readyNow(){
   console.log('jq onReady');
   $('#submitButton').on('click', onSubmit);
+  $('#submitButton').on('click', onSubmit);
+
   // $('#submitButton').on('click', appendEmployee);
 } 
 
@@ -84,8 +86,7 @@ function appendEmployee(newEmployee) {
         <td>${newEmployee.employeeID}</td>
         <td>${newEmployee.title}</td>
         <td>${newEmployee.annualSalary}</td>
-        <button class="">(delete button)</button>
-      </tr> 
+      </tr>
   `);
       
   // }
@@ -93,7 +94,9 @@ function appendEmployee(newEmployee) {
 }
 
 
-function deletButton() {
+
+
+function deleteButton() {
   for (employee of employees){
 
   }
